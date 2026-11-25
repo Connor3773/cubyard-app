@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cubyard Drive Backup</title>
+    <meta
+      name="description"
+      content="The app a self-hosted Cubyard panel uses to keep its encrypted backups in the operator's own Google Drive or OneDrive."
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 8.5 12 3 3 8.5v7L12 21l9-5.5z" />
+          <path d="M3 8.5 12 14l9-5.5M12 14v7" />
+        </svg>
+        <h1>Cubyard Drive Backup</h1>
+      </header>
+
+      <section>
+        <h2>What it is</h2>
+        <p>
+          Cubyard is a self-hosted panel for selling and managing virtual servers. Each panel runs on
+          its operator's own server and backs itself up regularly. Every backup is encrypted on that
+          server before it leaves it.
+        </p>
+        <p>
+          Cubyard Drive Backup is the app a panel uses to keep a copy of those encrypted backups in
+          the operator's own Google Drive or OneDrive, so the panel can be restored even if its server
+          is lost.
+        </p>
+      </section>
+
+      <section>
+        <h2>How it works</h2>
+        <ul>
+          <li>
+            In the panel, the operator chooses Google Drive or OneDrive, types a folder name and
+            clicks Authorize. The panel shows a short code; the operator enters it on Google's or
+            Microsoft's sign-in page on any device and allows access.
+          </li>
+          <li>
+            The panel creates that folder and uploads each new backup there. It deletes the old
+            backups it uploaded itself, following the operator's retention settings.
+          </li>
+          <li>
+            Access stays within the backup folder. On Google Drive the app can only see files and
+            folders it created (<code>drive.file</code>); on OneDrive it can only use its own folder
+            under Apps (<code>Files.ReadWrite.AppFolder</code>).
+          </li>
+          <li>
+            The operator can revoke access at any time from their Google or Microsoft account.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Your data</h2>
+        <p>
+          Backups and authorization tokens travel only between the operator's own panel and the
+          operator's own drive. The Cubyard project runs no service that receives them. See the
+          <a href="privacy.html">privacy policy</a>.
+        </p>
+      </section>
+
+      <div class="lang" lang="zh-CN">
+        <section>
+          <h2>这是什么</h2>
+          <p>
+            Cubyard 是经营者自行部署的 VPS 销售和管理面板，运行在经营者自己的服务器上，并定期备份自身；每份备份在离开服务器之前就已加密。
+          </p>
+          <p>
+            Cubyard Drive Backup
+            是面板用来把这些已加密的备份另存一份到经营者自己的 Google Drive 或 OneDrive 的应用，这样即使服务器整体损毁，也能恢复面板。
+          </p>
+        </section>
+        <section>
+          <h2>怎样使用</h2>
+          <ul>
+            <li>
+              在面板中选择 Google Drive 或 OneDrive，填写文件夹名称，点击授权。面板显示一串代码，经营者在任意设备上打开谷歌或微软的登录页面，输入代码并同意。
+            </li>
+            <li>面板创建该文件夹，每次备份后上传一份，并按经营者的保留设置删除自己上传的旧备份。</li>
+            <li>
+              权限只到备份文件夹：在 Google Drive 中只能看到应用自己建的文件和文件夹（<code>drive.file</code>）；在 OneDrive 中只能使用“应用”下属于它自己的文件夹（<code>Files.ReadWrite.AppFolder</code>）。
+            </li>
+            <li>经营者可以随时在谷歌或微软账号中撤销授权。</li>
+          </ul>
+        </section>
+        <section>
+          <h2>您的数据</h2>
+          <p>
+            备份和授权令牌只在经营者自己的面板和网盘之间传递，Cubyard 项目没有任何接收这些数据的服务。详见<a
+              href="privacy.html"
+              >隐私权政策</a
+            >。
+          </p>
+        </section>
+      </div>
+
+      <footer class="muted">
+        <a href="privacy.html">Privacy policy · 隐私权政策</a> ·
+        <a href="https://github.com/Connor3773/cubyard-app/issues">Contact · 联系</a>
+      </footer>
+    </main>
+  </body>
+</html>
